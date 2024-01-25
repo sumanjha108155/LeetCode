@@ -19,4 +19,4 @@ Welcome to my LeetCode Solutions repository, where I share my implementations of
 # Contributions:
 I encourage contributions! If you have a different or more optimized solution, submit a pull request. Let's learn and grow together in our coding journey.
 
-## Happy coding!
+# Happy coding!
