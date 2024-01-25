@@ -5,7 +5,6 @@ Welcome to LeetCode Solutions repository, where I share my implementations of va
 
 - C# Solutions: Each problem is solved using C#, providing a clear understanding of the language's syntax and features.
 - Structured Approach: Solutions are organized by problem difficulty and LeetCode tags, making it easy to navigate and find specific types of problems.
-- Comments and Explanations: Code is thoroughly commented, explaining the thought process and algorithmic approaches used to solve each problem.
 - Continuous Updates: The repository is regularly updated as I tackle new problems, ensuring a growing and comprehensive collection of LeetCode solutions.
 
 
