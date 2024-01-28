@@ -1,0 +1,19 @@
+public class Solution {
+    public int[] SmallerNumbersThanCurrent(int[] nums) {
+        
+        List<int> res = new List<int>();
+
+        int n = nums.Length;
+
+        int[] temp =  nums.ToArray();
+        Array.Sort(temp);
+
+        foreach(int i in nums)
+        {
+            
+            res.Add(Array.IndexOf(temp, i));
+        }
+
+        return res.ToArray();
+    }
+}
