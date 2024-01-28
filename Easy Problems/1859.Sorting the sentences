@@ -1,0 +1,6 @@
+public class Solution {
+    public string SortSentence(string s) {
+        var sen = s.Split(' ').OrderBy(s => int.Parse(s.Last().ToString())).Select(word => new string(word.Where(Char.IsLetter).ToArray()));
+        return string.Join(' ', sen);
+    }
+}
