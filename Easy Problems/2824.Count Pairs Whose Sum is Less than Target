@@ -1,0 +1,19 @@
+public class Solution {
+    public int CountPairs(IList<int> nums, int target) {
+        int count = 0;
+        var n = nums.ToArray();
+       
+        for(int i =0 ;i< n.Length - 1; i++)
+        {
+            for(int j = i+1; j<n.Length; j++)
+            {
+                if(i < j && j < n.Length && nums[i] + nums[j] < target)
+                {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
+
