@@ -1,0 +1,37 @@
+public class Solution {
+    public bool IsValid(string s) {
+        Dictionary<char, char> dict = new Dictionary<char, char>
+        {
+           {'(', ')'}, {'[', ']'}, {'{', '}'}
+        };
+
+        bool flag = false;
+
+        for(int i=0 ; i< s.Length; i++)
+        {
+            if(i == s.Length -1 )
+            {
+                return flag;
+            }
+            else
+            {
+                foreach(char c in s)
+                {
+                    char res;
+                    dict.TryGetValue(c, out res);
+                    if(res == s[i+1] )
+                    {
+                        flag = true;
+                    }
+                    else
+                    {
+                        flag = false;
+                        return flag;
+                    }
+                }
+            }
+        }
+
+        return flag;
+    }
+}
