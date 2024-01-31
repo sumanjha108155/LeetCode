@@ -1,0 +1,6 @@
+public class Solution {
+    public bool ContainsDuplicate(int[] nums) {
+        int[] dis = nums.Distinct().ToArray();
+        return dis.Length < nums.Length ? true : false;
+    }
+}

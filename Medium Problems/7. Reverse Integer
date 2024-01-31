@@ -1,0 +1,18 @@
+public class Solution {
+    public int Reverse(int x) {
+        int maxValue = Int32.MaxValue;
+        int minValue = Int32.MinValue;
+        long reverse = 0;
+        while(x != 0)
+        {
+            reverse = (reverse * 10) + x % 10;
+            x = x /10;
+        }
+        
+       if(reverse > maxValue || reverse < minValue) 
+       {
+           return 0;
+       }
+        return (int)reverse;
+    }
+}
