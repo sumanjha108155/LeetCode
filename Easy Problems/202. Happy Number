@@ -1,0 +1,24 @@
+public class Solution {
+
+    public static int Power(int n)
+    {
+        return (int)Math.Pow(n, 2);
+    }    
+    public bool IsHappy(int n) {
+        string temp = n.ToString();
+        int power = 0;
+        for(int i=0; i<temp.Length;i++)
+        {
+            power += Power(Convert.ToInt32(temp[i].ToString()));
+        }
+        if(power == 1 || power ==7 )
+        {
+            return true;
+        }
+        else if(power > 9)
+        {
+            return IsHappy(power);
+        } 
+       return false;
+    }
+}
