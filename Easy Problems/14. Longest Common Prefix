@@ -1,0 +1,36 @@
+public class Solution {
+    public string LongestCommonPrefix(string[] strings) {
+       if (strings == null || strings.Length == 0)
+            return "";
+
+        // Find the minimum length among all strings
+        int minLength = int.MaxValue;
+        foreach (string str in strings)
+        {
+            minLength = Math.Min(minLength, str.Length);
+        }
+
+        // Compare characters at each position in all strings
+        int commonPrefixLength = 0;
+        for (int i = 0; i < minLength; i++)
+        {
+            char currentChar = strings[0][i]; // Character at the i-th position in the first string
+
+            // Check if the character is the same in all strings
+            for (int j = 1; j < strings.Length; j++)
+            {
+                if (strings[j][i] != currentChar)
+                {
+                    // If characters don't match, break the loop
+                    return strings[0].Substring(0, commonPrefixLength);
+                }
+            }
+
+            // If characters match, increment the common prefix length
+            commonPrefixLength++;
+        }
+
+        // Return the common prefix
+        return strings[0].Substring(0, commonPrefixLength);
+    }
+}

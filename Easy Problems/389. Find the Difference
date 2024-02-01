@@ -1,0 +1,26 @@
+public class Solution {
+    public char FindTheDifference(string s, string t) {
+       char[] c1 = s.ToCharArray();
+char[] c2 = t.ToCharArray();
+Array.Sort(c1);
+Array.Sort(c2);
+
+string s1 = new string(c1);
+string t1 = new string(c2);
+char c = '*';
+int j = 0;
+for (int i = 0; i < t1.Length; i++)
+{
+    if (j < s1.Length && t1[i] == s1[j])
+    {
+        j++;
+    }
+    else
+    {
+        c = t1[i]; break;
+    }
+}
+
+return c;
+    }
+}

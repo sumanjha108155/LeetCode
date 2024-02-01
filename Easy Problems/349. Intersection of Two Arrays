@@ -1,0 +1,5 @@
+public class Solution {
+    public int[] Intersection(int[] nums1, int[] nums2) {
+        return (int[])nums1.Intersect(nums2).ToArray();
+    }
+}
