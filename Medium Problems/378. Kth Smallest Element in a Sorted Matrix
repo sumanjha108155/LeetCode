@@ -1,0 +1,15 @@
+public class Solution {
+    public int KthSmallest(int[][] matrix, int k) {
+        List<int> list = new List<int>();
+
+        foreach(int[] i in matrix)
+        {
+            list.AddRange(i);
+        }
+
+        int[] arr = list.ToArray();
+        Array.Sort(arr);
+
+        return arr[k-1];
+    }
+}
