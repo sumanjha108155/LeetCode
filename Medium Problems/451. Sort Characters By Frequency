@@ -1,0 +1,5 @@
+public class Solution {
+    public string FrequencySort(string s) {
+       return string.Concat(s.GroupBy(x => x).OrderByDescending(x => x.Count()).SelectMany(x => x));
+    }
+}
