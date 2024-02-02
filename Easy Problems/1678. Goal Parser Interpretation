@@ -1,0 +1,38 @@
+public class Solution {
+     public string Interpret(string command)
+ {
+     Stack stack = new Stack();
+     List<char> list = new List<char>();
+
+     foreach (char c in command)
+     {
+         if (c == '(' || c == 'l' || c == 'a')
+         {
+             stack.Push(c);
+         }
+         else if (c == ')')
+         {
+             if (stack.Contains('l'))
+             {
+                 stack.Pop();
+                 stack.Pop();
+                 stack.Pop();
+                 list.Add('a');
+                 list.Add('l');
+             }
+             else
+             {
+                 stack.Pop();
+                 list.Add('o');
+             }
+
+         }
+         else if (c == 'G')
+         {
+             list.Add(c);
+         }
+     }
+
+     return String.Concat(list);
+ }
+}

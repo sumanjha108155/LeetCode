@@ -1,0 +1,11 @@
+public class Solution {
+    public IList<int> FindWordsContaining(string[] words, char x) {
+        List<int> list = new List<int>();
+        var word = words.Select((str, index) => new {Str = str, Index = index}).Where(s => s.Str.Contains(x));
+        foreach(var v in word)
+        {
+            list.Add(v.Index);
+        }
+        return list;
+    }
+}
