@@ -1,0 +1,26 @@
+public class Solution {
+    public IList<int> SequentialDigits(int low, int high) {
+        int minCount = low.ToString().Length;
+        int maxCount = high.ToString().Length;
+
+        IList<int> result = new List<int>();
+
+        string s = "123456789";
+        for(int i = minCount; i <= maxCount; i++)
+        {
+            for(int j = 0; j < 10 - i ; j++)
+            {
+                int n = Convert.ToInt32(new string(s.Skip(j).Take(i).ToArray()));
+                if(low <= n && n <= high)
+                {
+                    result.Add(n);
+                }
+            }
+            
+        }
+        
+
+
+        return result;
+    }
+}
