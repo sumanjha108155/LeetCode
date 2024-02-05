@@ -1,0 +1,15 @@
+public class Solution {
+    public int ThirdMax(int[] nums) {
+        Array.Sort(nums);
+        int[] distinct = nums.Distinct().ToArray();
+        if(distinct.Length <= 2)
+        {
+            return nums.Max();
+        }
+        else
+        {
+            return distinct[distinct.Length - 3];
+        }
+      
+    }
+}
