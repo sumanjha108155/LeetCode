@@ -1,0 +1,13 @@
+public class Solution {
+    public string ReverseWords(string s) {
+        List<string> list = new List<string>();
+        string[] str = s.Split(' ');
+        foreach (string st in str)
+        {
+            list.Add(new string(st.Reverse().ToArray()));
+        }
+
+        string g =  string.Join(" ", list);
+        return g;
+    }
+}
