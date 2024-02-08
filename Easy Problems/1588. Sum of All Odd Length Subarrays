@@ -1,0 +1,22 @@
+public class Solution {
+    public int SumOddLengthSubarrays(int[] arr) {
+        
+        int sum = 0;
+
+        for (int i = 0; i <= arr.Length; i++)
+        {
+            
+            if (i % 2 == 1)
+            {
+                for (int j = 0; j <= arr.Length - i; j++)
+                {
+                    sum += arr.Skip(j).Take(i).Sum();
+                }
+            }
+            
+        }
+
+        return sum;
+
+    }
+}
