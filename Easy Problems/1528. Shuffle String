@@ -1,0 +1,18 @@
+public class Solution {
+    public string RestoreString(string s, int[] indices) {
+       char[] result = new char[s.Length];
+
+        int i = 0;
+        foreach (char c in s)
+        {
+            while( i< indices.Length)
+            {
+                result[indices[i]] = c;
+                i++;
+                break;
+            }
+        }
+
+        return new string(result);
+    }
+}
