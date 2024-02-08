@@ -1,0 +1,23 @@
+public class Solution {
+    public int NumIdenticalPairs(int[] nums) {
+        int len = nums.Length;
+        int count = 0;
+
+        if(len <= 1)
+        {
+            return 0;
+        }
+        for(int i =0;i<len;i++)
+        {
+            for(int j = i+1;j<len;j++)
+            {
+                if(nums[i] == nums[j] && i < j)
+                {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+}
