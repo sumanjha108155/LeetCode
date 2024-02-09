@@ -1,0 +1,26 @@
+public class Solution {
+
+    public bool AreAnagrams(string s1, string s2)
+    {
+        return s1.OrderBy(c => c).SequenceEqual(s2.OrderBy(c => c));
+    }
+
+    public IList<IList<string>> GroupAnagrams(string[] strs) {
+         Dictionary<string, List<string>> anagramGroups = new Dictionary<string, List<string>>();
+
+        for (int i = 0; i < strs.Length; i++) {
+            string current = strs[i];
+
+            string sortedKey = new string(current.OrderBy(c => c).ToArray());
+            if (!anagramGroups.ContainsKey(sortedKey)) {
+                anagramGroups[sortedKey] = new List<string>();
+            }
+
+            anagramGroups[sortedKey].Add(current);
+        }
+
+        IList<IList<string>> result = anagramGroups.Values.ToList<IList<string>>();
+
+        return result;
+    }
+}

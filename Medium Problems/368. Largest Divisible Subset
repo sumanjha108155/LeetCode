@@ -1,0 +1,35 @@
+public class Solution {
+    public IList<int> LargestDivisibleSubset(int[] nums) {
+        Array.Sort(nums);
+       IList<int>[] dp = new List<int>[nums.Length];
+            IList<int> ltDivisibleResult = new List<int>() { nums[0] };
+            for (int i=0;i<nums.Length;i++)
+            {
+                dp[i] = new List<int>() { nums[i] };
+            }
+
+            for (int i = 0; i<nums.Length; i++)
+            {
+                for (int j = 0; j<i; j++)
+                {
+                    if (nums[i] % nums[j] == 0)
+                    {
+                        IList<int> tempdp = new List<int>(dp[j]);
+
+
+                        tempdp.Add(nums[i]);
+
+                        if (tempdp.Count > dp[i].Count)
+                        {
+                            dp[i] = tempdp;
+                        }
+                        if (tempdp.Count > ltDivisibleResult.Count)
+                        {
+                            ltDivisibleResult = tempdp;
+                        }
+                    }
+                }
+            }
+            return ltDivisibleResult;
+    }
+}
