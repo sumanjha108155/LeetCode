@@ -1,0 +1,60 @@
+public class Solution {
+    public int CountMatches(IList<IList<string>> items, string ruleKey, string ruleValue) {
+
+        Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+        int count = 0;
+
+        foreach(List<string> item in items)
+        {
+            for(int i = 0; i < item.Count; i++)
+            {
+                if(i == 0)
+                {
+                    if(!dict.TryGetValue("type", out var typeList))
+                    {
+                        dict.Add("type", new List<string>{item[i]});
+                    }
+                    else
+                    {
+                        typeList.Add(item[i]);
+                    }
+                }
+                else if(i == 1)
+                {
+                    if(!dict.TryGetValue("color", out var colorList))
+                    {
+                        dict.Add("color", new List<string>{item[i]});
+                    }
+                    else
+                    {
+                        colorList.Add(item[i]);
+                    }
+                }
+                else if(i == 2)
+                {
+                    if(!dict.TryGetValue("name", out var nameList))
+                    {
+                        dict.Add("name", new List<string>{item[i]});
+                    }
+                    else
+                    {
+                        nameList.Add(item[i]);
+                    }
+                }
+            }
+        }
+
+        if(dict.TryGetValue(ruleKey, out var values))
+        {
+            foreach(string value in values)
+            {
+                if(value == ruleValue)
+                {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+}
