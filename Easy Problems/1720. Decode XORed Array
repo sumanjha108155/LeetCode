@@ -1,0 +1,14 @@
+public class Solution {
+    public int[] Decode(int[] encoded, int first) {
+        List<int> list = new List<int>();
+        list.Add(first);
+
+        foreach(int i in encoded)
+        {
+            list.Add(i ^ list.Last());
+        }
+
+        return list.ToArray();
+
+    }
+}
