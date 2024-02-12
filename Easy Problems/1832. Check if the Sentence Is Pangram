@@ -1,0 +1,20 @@
+public class Solution {
+    public bool CheckIfPangram(string sentence) {
+        bool res= false;
+
+        foreach(int i in Enumerable.Range(97,26))
+        {
+            if(sentence.Contains((char)i))
+            {
+                res= true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        return res;
+        
+    }
+}
