@@ -1,0 +1,32 @@
+public class Solution {
+    public string DecodeMessage(string key, string message) {
+        Dictionary<char, char> dict = new Dictionary<char, char>();
+        char character = 'a';
+        
+        foreach(char c in key)
+        {
+            if(!(dict.ContainsKey(c)) && c != ' ')
+            {
+                dict.Add(c, character);
+                character++;
+            } 
+        }
+
+        List<char> decoded = new List<char>();
+
+        foreach(char v in message)
+        {
+            if(v == ' ')
+            {
+                decoded.Add(' ');
+            }
+            else
+            {
+                decoded.Add(dict[v]);
+            }   
+        }
+
+        return new string(decoded.ToArray());
+
+    }
+}
