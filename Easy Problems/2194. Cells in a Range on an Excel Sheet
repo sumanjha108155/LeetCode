@@ -1,0 +1,21 @@
+public class Solution {
+    public IList<string> CellsInRange(string s) {
+        IList<string> list = new List<string>();
+        int c1 = (int)s[0];
+        int c2 = (int)s[3];
+        int n1 = (int)(s[1] - '0');
+        int n2 = (int)(s[4] - '0');
+
+        
+        for(int j=c1; j <=c2; j++)
+        {
+            for(int i = n1; i <= n2; i++)
+            {
+                string str = ((char)(j)).ToString() + i.ToString();
+                list.Add(str);
+            }
+        }
+
+        return list;
+    }
+}
