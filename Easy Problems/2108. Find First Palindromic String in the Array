@@ -1,0 +1,18 @@
+public class Solution {
+    public string FirstPalindrome(string[] words) {
+
+        if(words.Length == 0)
+        {
+            return "";
+        }
+
+        foreach(string s in words)
+        {
+            if(s == new string (s.Reverse().ToArray()))
+            {
+                return s;
+            }
+        }
+        return "";
+    }
+}
