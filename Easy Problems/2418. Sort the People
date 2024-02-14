@@ -1,0 +1,24 @@
+public class Solution {
+    public string[] SortPeople(string[] names, int[] heights) {
+        Hashtable table = new Hashtable();
+        string[] str = new string[names.Length];
+
+        for(int i =0; i < heights.Length; i++)
+        {
+            table.Add(heights[i], names[i]);
+        }
+
+        Array.Sort(heights);
+        Array.Reverse(heights);
+
+       for(int j =0; j < heights.Length; j++)
+        {
+           if(table.ContainsKey(heights[j]))
+           {
+               str[j] = (string)table[heights[j]];
+           } 
+        }
+
+        return str;
+    }
+}
