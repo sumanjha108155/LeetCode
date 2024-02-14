@@ -1,0 +1,30 @@
+public class Solution {
+
+
+    public int CountDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, string leaveBob) {
+       
+        var arrivealice = DateTime.Parse("2023-"+arriveAlice);
+        var leavealice = DateTime.Parse("2023-"+leaveAlice);
+        var arrivebob = DateTime.Parse("2023-"+arriveBob);
+        var leavebob = DateTime.Parse("2023-"+leaveBob);
+
+        int count  = 1;
+
+        if(leavealice < arrivebob ||arrivealice > leavebob )
+        {
+            return 0;
+        }
+
+        var start = arrivealice > arrivebob ? arrivealice : arrivebob;
+        var end = leavebob > leavealice ?  leavealice :leavebob;
+
+        while(start < end)
+        {
+            start = start.AddDays(1);
+            count++;
+        }
+
+        return count;
+
+    }
+}
