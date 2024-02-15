@@ -1,0 +1,18 @@
+public class Solution {
+    public long LargestPerimeter(int[] nums) {
+        Array.Sort(nums);
+        
+        long previous_elements_sum = 0;
+        long ans = -1;
+
+        foreach (int num in nums) {
+            if (num < previous_elements_sum) {
+                ans = Math.Max(ans, previous_elements_sum + num);
+            }
+
+            previous_elements_sum += num;
+        }
+
+        return ans;
+    }
+}
