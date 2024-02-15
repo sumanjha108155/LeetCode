@@ -1,0 +1,16 @@
+public class Solution {
+    public int FindDelayedArrivalTime(int arrivalTime, int delayedTime) {
+        int totalHours = arrivalTime + delayedTime;
+        if(totalHours == 24 )
+        {
+            return 0;
+        }
+        else if( totalHours > 24)
+        {
+            return (totalHours - 24 );
+        } else
+        {
+            return totalHours;
+        }
+    }
+}
