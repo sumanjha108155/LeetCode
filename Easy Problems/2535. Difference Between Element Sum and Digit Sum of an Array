@@ -1,0 +1,9 @@
+public class Solution {
+
+    public int DifferenceOfSum(int[] nums1) {
+        int sum = nums1.Sum();
+        int digitSum = nums1.SelectMany(n => n.ToString().Select(c => int.Parse(c.ToString()))).Sum();
+        return Math.Abs(sum - digitSum);
+    }
+}
+
