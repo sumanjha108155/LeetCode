@@ -1,0 +1,6 @@
+public class Solution {
+    public int FindLeastNumOfUniqueInts(int[] arr, int k) {
+        return arr.GroupBy(x => x).OrderBy(x => x.Count()).SelectMany(x => x).Skip(k).Distinct().Count();
+    }
+}
+
