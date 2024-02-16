@@ -1,0 +1,13 @@
+public class Solution {
+    public int MaximizeSum(int[] nums, int k) {
+        int maxElement = nums.Max();
+        int sum = 0;
+        for(int i=0;i<k;i++)
+        { 
+            sum += maxElement;
+            maxElement++;
+        }
+
+        return sum;
+    }
+}
