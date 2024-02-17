@@ -1,0 +1,19 @@
+public class Solution {
+    public string FinalString(string s) {
+        string str = "";
+
+        foreach(char c in s)
+        {
+            if(c == 'i')
+            {
+               str =  new string (str.Reverse().ToArray());
+            }
+            else
+            {
+                str+= c;
+            }
+        }
+
+        return str;
+    }
+}
