@@ -1,0 +1,22 @@
+public class Solution {
+    public bool IsAcronym(IList<string> words, string s) {
+        string str = "";
+
+        foreach(string st in words)
+        {
+            for(int i = 0; i<= 0 ; i++)
+            {
+                str += st[i];
+            }
+        }
+
+        if(str == s)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
