@@ -1,0 +1,29 @@
+public class Solution {
+    public int[] NumberGame(int[] nums) {
+         List<int> l = nums.ToList();
+        Console.WriteLine(l.Count());
+        List<int> list = new List<int>();
+
+        while (l.Any()) // Check if the list is not empty
+        {
+            int min1 = l.Min(); 
+            l.Remove(min1);
+
+            if (l.Any()) // Check if the list is not empty after removing the first element
+            {
+                int min2 = l.Min();
+                l.Remove(min2);
+                list.Add(min2);
+                list.Add(min1);
+            }
+            else
+            {
+                // Handle the case where there's only one element left in the list
+                list.Add(min1);
+            }
+        }
+        return list.ToArray();
+       
+        
+    }
+}
