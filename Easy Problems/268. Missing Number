@@ -1,0 +1,11 @@
+public class Solution {
+    public int MissingNumber(int[] nums) {
+        int xorResult = nums.Length;
+
+        for (int i = 0; i < nums.Length; i++) {
+            xorResult ^= i ^ nums[i];
+        }
+
+        return xorResult;
+    }
+}
