@@ -1,0 +1,22 @@
+public class Solution {
+    public int FindJudge(int n, int[][] trust) {
+        int[] trustCount = new int[n + 1];
+        HashSet<int> candidates = new HashSet<int>();
+
+        foreach (var relation in trust) {
+            int a = relation[0];
+            int b = relation[1];
+
+            trustCount[b]++;
+            candidates.Add(a);
+        }
+
+        for (int i = 1; i <= n; i++) {
+            if (trustCount[i] == n - 1 && !candidates.Contains(i)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+}

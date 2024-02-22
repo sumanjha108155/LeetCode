@@ -1,0 +1,29 @@
+public class Solution {
+    public int CountAsterisks(string s) {
+        int count = 0;
+        int check = 0;
+
+        foreach(char c in s)
+        {
+            if(c == '|')
+            {
+                if(check == 0)
+                {
+                    check = 1;
+                }
+                else
+                {
+                    check = 0;
+                }
+            }
+
+            if(check == 0 && c== '*')
+            {
+                count++;
+            }
+
+        }
+
+        return count;
+    }
+}
