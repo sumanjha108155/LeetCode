@@ -1,0 +1,34 @@
+public class Solution {
+    public int[] LeftRightDifference(int[] nums)
+ {
+     int len = nums.Length;
+     int[] arr = nums.ToArray();
+
+     for (int i = 0; i < len; i++)
+     {
+         int leftSum = 0;
+         int rightSum = 0;
+         if (i == 0)
+         {
+             leftSum = 0;
+             rightSum = nums.Skip(i + 1).Take(len - 1 - i).Sum();
+
+         }
+         else if (i == len - 1)
+         {
+             rightSum = 0;
+             leftSum = nums.Skip(0).Take(i).Sum();
+
+         }
+         else
+         {
+             rightSum = nums.Skip(i + 1).Take(len - 1 - i).Sum();
+             leftSum = nums.Skip(0).Take(i).Sum();
+         }
+
+         arr[i] = Math.Abs(leftSum - rightSum);
+     }
+
+     return arr;
+    }
+}
