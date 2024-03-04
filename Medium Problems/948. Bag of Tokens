@@ -1,0 +1,20 @@
+public class Solution {
+    public int BagOfTokensScore(int[] tokens, int power) {
+        Array.Sort(tokens);
+        int l = 0, r = tokens.Length - 1, score = 0;
+        int res = 0;
+        while(l <= r){
+            if(power >= tokens[l]){
+                score++;
+                power -= tokens[l];
+                l++;
+            }else if(score > 0){
+                score--;
+                power += tokens[r];
+                r--;
+            }else break;
+            res = Math.Max(res,score);
+        }
+        return res;
+    }
+}
